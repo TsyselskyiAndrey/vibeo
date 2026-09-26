@@ -1,0 +1,162 @@
+:root[data-theme="dark"] {
+  --bg: #0a0f1e;
+  --bg-elevated: rgba(255, 255, 255, 0.06);
+  --surface: rgba(255, 255, 255, 0.05);
+
+  --glow-1: rgba(14, 116, 144, 0.45);
+  --glow-2: rgba(37, 99, 235, 0.35);
+
+  --text-primary: #f0f4ff;
+  --text-muted: rgba(240, 244, 255, 0.55);
+
+  --accent-primary: #38bdf8;
+  --accent-cyan: #22d3ee;
+  --accent-blue: #60a5fa;
+
+  --border: rgba(255, 255, 255, 0.14);
+
+  --rec-red: #ff5470;
+  --error: crimson;
+
+  --auth-input-bg: rgba(0, 21, 255, 0);
+  --auth-input-shadow: rgba(255, 255, 255, 0.25);
+  --auth-input-focus: var(--accent-primary);
+  --auth-btn-bg: transparent;
+  --auth-btn-text: whitesmoke;
+  --auth-btn-hover-bg: rgba(255, 255, 255, 0.025);
+  --auth-btn-hover-text: var(--auth-btn-text);
+  --auth-btn-active-bg: var(--auth-btn-hover-bg);
+  --auth-btn-border-left: rgba(255, 255, 255, 0.218);
+  --auth-btn-border-right: rgba(0, 0, 0, 0.65);
+  --auth-btn-disabled-bg: rgba(255, 255, 255, 0.04);
+  --auth-btn-disabled-text: rgba(240, 244, 255, 0.35);
+  --auth-link-color: var(--accent-primary);
+  --auth-divider: rgba(255, 255, 255, 0.2);
+  --auth-google-btn-bg: transparent;
+  --auth-google-btn-border: rgba(255, 255, 255, 0.2);
+  --auth-google-btn-hover: rgba(255, 255, 255, 0.08);
+  --auth-google-btn-disabled: rgba(255, 255, 255, 0.04);
+
+  --selection-bg: rgba(56, 189, 248, 0.45);
+
+  --scrollbar-thumb: rgba(96, 165, 250, 0.3);
+  --scrollbar-hover: rgba(96, 165, 250, 0.5);
+}
+
+:root[data-theme="light"] {
+  --bg: #f0f4fa;
+  --bg-elevated: rgba(255, 255, 255, 0.25);
+  --surface: rgba(11, 18, 32, 0.04);
+
+  --glow-1: rgba(125, 211, 252, 0.5);
+  --glow-2: rgba(147, 197, 253, 0.45);
+
+  --text-primary: #0b1220;
+  --text-muted: rgba(11, 18, 32, 0.6);
+
+  --accent-primary: #0284c7;
+  --accent-cyan: #00c8d6;
+  --accent-blue: #2563eb;
+
+  --border: rgba(255, 255, 255, 0.7);
+
+  --rec-red: #e11d48;
+  --error: crimson;
+
+  --auth-input-bg: rgba(255, 255, 255, 0);
+  --auth-input-shadow: rgba(11, 18, 32, 0.2);
+  --auth-input-focus: var(--accent-primary);
+  --auth-btn-bg: #0b1220;
+  --auth-btn-text: #f0f4fa;
+  --auth-btn-hover-bg: rgba(255, 255, 255, 0.05);
+  --auth-btn-hover-text: #000000;
+  --auth-btn-active-bg: rgba(255, 255, 255, 0.05);
+  --auth-btn-border-right: rgba(0, 0, 0, 0.398);
+  --auth-btn-border-left: rgba(117, 117, 117, 0.398);
+  --auth-btn-disabled-bg: rgba(11, 18, 32, 0.06);
+  --auth-btn-disabled-text: rgba(11, 18, 32, 0.35);
+  --auth-link-color: var(--accent-primary);
+  --auth-divider: rgba(11, 18, 32, 0.18);
+  --auth-google-btn-bg: transparent;
+  --auth-google-btn-border: rgba(11, 18, 32, 0.2);
+  --auth-google-btn-hover: rgba(11, 18, 32, 0.06);
+  --auth-google-btn-disabled: rgba(11, 18, 32, 0.04);
+
+  --selection-bg: rgba(2, 132, 199, 0.3);
+
+  --scrollbar-thumb: rgba(2, 132, 199, 0.25);
+  --scrollbar-hover: rgba(2, 132, 199, 0.45);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    --bg: #0a0f1e;
+    --text-primary: #f0f4ff;
+    --text-muted: rgba(240, 244, 255, 0.55);
+  }
+}
+
+html {
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-inter), sans-serif;
+  background: var(--bg);
+  color: var(--text-primary);
+  transition:
+    background 0.4s ease,
+    color 0.4s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+*::selection {
+  background-color: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+.preventSelect {
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb);
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbar-hover);
+}

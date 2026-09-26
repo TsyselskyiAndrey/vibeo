@@ -1,0 +1,31 @@
+.error {
+  color: var(--error);
+  font-size: var(--error-font-size, small);
+  display: inline-block;
+  margin-top: var(--error-margin-top, 6px);
+  max-width: 320px;
+  text-wrap: wrap;
+  margin-bottom: 1px;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  75% {
+    transform: translateX(-5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}

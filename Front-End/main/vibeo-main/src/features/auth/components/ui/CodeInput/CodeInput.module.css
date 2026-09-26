@@ -1,0 +1,48 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 350px;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cell {
+  width: 15%;
+  height: 65px;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  background-color: var(--auth-input-bg);
+  color: var(--text-primary);
+  transition:
+    border-color 0.2s ease,
+    background-color 0.4s ease,
+    color 0.4s ease;
+}
+
+.cell:focus {
+  border: 2px solid var(--accent-primary);
+  outline: none;
+}
+
+.cellError,
+.cellError:focus {
+  border: 2px solid var(--error);
+  outline: none;
+}
+
+.errorSlot {
+  --error-margin-top: 15px;
+  --error-font-size: 15px;
+  width: 100%;
+  text-align: center;
+}

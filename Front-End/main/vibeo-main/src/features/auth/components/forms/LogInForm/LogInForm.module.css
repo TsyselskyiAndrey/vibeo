@@ -1,0 +1,65 @@
+.divider {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 2px;
+  color: var(--auth-divider);
+  justify-content: center;
+}
+
+.line {
+  flex: 1;
+  height: 1px;
+  border-bottom: 2px solid var(--auth-divider);
+}
+
+.or {
+  padding: 0 10px;
+  margin: 16px 0;
+  color: var(--text-muted);
+}
+
+.googleLogo {
+  margin-right: 20px;
+  margin-left: 5px;
+}
+
+.googleLogin {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  height: 50px;
+  font-size: 22px;
+  padding: 1px 6px;
+  font-weight: 400;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  background-color: var(--auth-google-btn-bg);
+  color: var(--text-primary);
+  border: 2px solid var(--auth-google-btn-border);
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.googleLogin:disabled {
+  cursor: not-allowed;
+  background-color: var(--auth-google-btn-disabled);
+  color: var(--text-muted);
+}
+
+.googleLogin:not(:disabled):hover {
+  background-color: var(--auth-google-btn-hover);
+  border-color: var(--text-muted);
+}
+
+.googleLogin:not(:disabled):active {
+  background-color: var(--auth-google-btn-hover);
+  filter: brightness(0.95);
+}

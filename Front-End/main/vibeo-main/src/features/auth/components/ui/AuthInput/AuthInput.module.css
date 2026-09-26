@@ -1,0 +1,93 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  border-radius: 3px;
+}
+
+.label {
+  position: absolute;
+  top: 27px;
+  left: 1px;
+  font-size: 18px;
+  color: var(--text-muted);
+  opacity: 0.8;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.input {
+  background-color: var(--auth-input-bg);
+  appearance: none;
+  width: 100%;
+  border: 0;
+  padding: 16px 12px 0 2px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: 400;
+  box-shadow: inset 0 -3px 0 var(--auth-input-shadow);
+  color: var(--text-primary);
+  transition:
+    all 0.15s ease,
+    color 0.4s ease,
+    background-color 0s ease;
+}
+
+.withToggle {
+  padding-right: 45px;
+}
+
+.input::selection {
+  background-color: var(--selection-bg);
+  color: var(--text-primary);
+}
+
+.input:not(:placeholder-shown) + .label {
+  transform-origin: left;
+  transform: translate3d(0, -27px, 0) scale(0.9);
+}
+
+.input:focus {
+  outline: none;
+  box-shadow: inset 0 -3px 0 var(--auth-input-focus);
+}
+
+.input:focus + .label {
+  color: var(--accent-primary);
+  opacity: 1;
+  transform-origin: left;
+  transform: translate3d(0, -27px, 0) scale(0.9);
+}
+
+.toggle {
+  position: absolute;
+  top: 30px;
+  right: 10px;
+  width: 27px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  background: none;
+  opacity: 0.6;
+  cursor: pointer;
+  color: var(--text-primary);
+  transition: color 0.4s ease;
+}
+
+.toggle:hover {
+  opacity: 0.8;
+}
+
+.toggle img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: var(--icon-filter, none);
+}
+
+[data-theme="dark"] .toggle img {
+  --icon-filter: invert(1);
+}
